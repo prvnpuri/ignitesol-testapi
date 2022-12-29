@@ -19,6 +19,8 @@ mysql dump file https://drive.google.com/file/d/1Q3QZcy3fmltgLIwLsldPx_KYBOTNuAG
 npm install
 ```
 
+3. Please check database configurations in location src/env.ts
+
 ### run server
 
 ```
