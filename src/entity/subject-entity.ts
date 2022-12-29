@@ -15,5 +15,6 @@ export class Subject extends Model {
   @Column
   name:string;
 
+  
 
 }

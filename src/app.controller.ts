@@ -1,4 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
+import { Header, Req } from '@nestjs/common/decorators';
+import { Request } from 'express';
 import { AppService } from './app.service';
 import { BooksService } from './service/books-service';
 
@@ -13,8 +15,13 @@ export class AppController {
 
 
   @Get("/api/books")
-  getBooks(){
-    return this.booksService.findAll({offset:0});
+  @Header('Cache-Control', 'none')
+  getBooks(@Req() request: Request){
+    let query=Object.assign({
+      offset:0,
+      limit:25,
+    },request.query);
+    return this.booksService.findAll(query);
   }
 
 }

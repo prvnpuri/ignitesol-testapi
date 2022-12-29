@@ -4,7 +4,7 @@ import { Author } from 'src/entity/author-entity';
 import { BookAuthor } from 'src/entity/book-author-entity';
 import { BookbookShelves } from 'src/entity/book-bookselfves-entity';
 import { Books } from 'src/entity/books-entity';
-import { BookLanguage } from 'src/entity/books-language-entity';
+import { BookLanguages } from 'src/entity/books-language-entity';
 import { BookSubject } from 'src/entity/books-subject-entity';
 import { Bookshelf } from 'src/entity/bookshelf-entity';
 import { Format } from 'src/entity/formats-entity';
@@ -26,7 +26,7 @@ export const databaseProviders = [
         BookSubject,Subject,
         BookAuthor,Author,
         Bookshelf,BookbookShelves,
-        Language,BookLanguage,
+        Language,BookLanguages,
         Format
       
       ]);

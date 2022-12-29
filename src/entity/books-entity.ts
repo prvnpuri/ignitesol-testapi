@@ -1,8 +1,9 @@
+import { All } from '@nestjs/common/decorators';
 import { Table, Column, Model, HasMany, ForeignKey, BelongsToMany, HasOne } from 'sequelize-typescript';
 import { Author } from './author-entity';
 import { BookAuthor } from './book-author-entity';
 import { BookbookShelves } from './book-bookselfves-entity';
-import { BookLanguage } from './books-language-entity';
+import { BookLanguages } from './books-language-entity';
 import { BookSubject } from './books-subject-entity';
 import { Format } from './formats-entity';
 import { Subject } from './subject-entity';
@@ -39,11 +40,11 @@ export class Books extends Model {
   @HasMany(type=>BookbookShelves,"book_id")
   book_shelves:BookbookShelves[];
 
-  @HasMany(type=>BookLanguage,"book_id")
-  book_languages:BookLanguage[];
+  @HasMany(type=>BookLanguages,"book_id")
+  book_languages:BookLanguages[];
 
   @HasMany(type=>Format,"book_id")
-  book_downloads:BookLanguage[];
+  book_downloads:Format[];
 
 
 }

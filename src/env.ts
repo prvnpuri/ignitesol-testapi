@@ -4,7 +4,7 @@ export const config={
         host: 'localhost',
         port: 3306,
         username: 'root',
-        password: 'praveen',
+        password: '',
         database: 'ignitesol_bookapi',
     }
 }

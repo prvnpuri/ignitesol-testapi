@@ -1,4 +1,4 @@
-import { Table, Column, Model, BelongsTo } from 'sequelize-typescript';
+import { Table, Column, Model, BelongsTo, DataType } from 'sequelize-typescript';
 import { Author } from './author-entity';
 
 @Table({
@@ -16,6 +16,11 @@ export class BookAuthor extends Model {
 
   @Column
   author_id: number;
+
+  @Column(DataType.VIRTUAL)
+  get author_name(){
+    return this.author.get("name");
+  }
 
   @BelongsTo(type=>Author,"author_id")
   author:Author;
